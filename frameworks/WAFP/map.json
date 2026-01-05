@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "originator": "AWS",
+    "shortname": "WAFP",
+    "fullname": "AWS Well-Architected Framework - Performance Efficiency Pillar",
+    "description": "This framework focuses on the performance efficiency pillar. The performance efficiency pillar includes the ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve. This paper provides in-depth, best practice guidance for implementing performant workloads on AWS.",
+    "_": "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/welcome.html",
+    "emptyCheckDefaultMsg": ""
+  },
+  "mapping": {
+    "PERF01": {
+      "BP01": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
+      "BP02": ["rds.BurstableInstance"],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "PERF02": {
+      "BP01": ["ec2.EC2DetailedMonitor", "ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
+      "BP02": ["rds.PerformanceInsightsEnabled"],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "PERF03": {
+      "BP01": ["ec2.EC2HighUtilization", "ec2.EBSHighUtilization"],
+      "BP02": ["rds.MYSQL__parammInnodbStatsPersistent", "rds.MYSQLA__paramAuroraLabMode"],
+      "BP03": ["rds.MYSQLA__paramQueryCacheType", "rds.MYSQL__paramQueryCacheType"],
+      "BP04": ["rds.MYSQL__LogsGeneral"],
+      "BP05": []
+    },
+    "PERF04": {
+      "BP01": ["rds.PG__param_idleTransTimeout", "rds.PG__param_statementTimeout", "rds.PG__param_tempFileLimit"],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "PERF05": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    }
+  }
+}

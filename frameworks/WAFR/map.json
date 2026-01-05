@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "originator": "AWS",
+    "shortname": "WAFR",
+    "fullname": "AWS Well-Architected Framework - Reliability Pillar",
+    "description": "This framework focuses on the reliability pillar. The reliability pillar encompasses the ability of a workload to perform its intended function correctly and consistently when it's expected to. This includes the ability to operate and test the workload through its total lifecycle. This paper provides in-depth, best practice guidance for implementing reliable workloads on AWS.",
+    "_": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html",
+    "emptyCheckDefaultMsg": ""
+  },
+  "mapping": {
+    "REL01": {
+      "BP01": ["iam.hasAWSBackupPlans"],
+      "BP02": ["rds.Backup", "rds.BackupTooLow", "redshift.AutomaticSnapshots", "efs.AutomatedBackup"],
+      "BP03": ["ec2.EBSSnapshot", "ec2.EBSUpToDateSnapshot"],
+      "BP04": ["redshift.CrossRegionSnapshots"],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL02": {
+      "BP01": ["rds.MultiAZ", "rds.Aurora__ClusterSize"],
+      "BP02": ["rds.Subnets3Az", "redshift.AZRelocation"],
+      "BP03": ["ec2.ELBCrossZone", "ec2.ELBConnectionDraining"],
+      "BP04": ["efs.IsSingleAZ"],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL03": {
+      "BP01": ["rds.FreeStorage20pct", "rds.EnableStorageAutoscaling"],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL04": {
+      "BP01": ["rds.MYSQL__parammAutoCommit", "rds.MYSQL__param_syncBinLog", "rds.MYSQL__param_innodbFlushTrxCommit"],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL05": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL06": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL07": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL08": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL09": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL10": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL11": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL12": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    },
+    "REL13": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": []
+    }
+  }
+}

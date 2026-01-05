@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "originator": "AWS",
+    "shortname": "WAFO",
+    "fullname": "AWS Well-Architected Framework - Operational Excellence Pillar",
+    "description": "This framework focuses on the operational excellence pillar. The operational excellence pillar includes the ability to support development and run workloads effectively, gain insight into their operations, and to continuously improve supporting processes and procedures to deliver business value. This paper provides in-depth, best practice guidance for implementing operationally excellent workloads on AWS.",
+    "_": "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html",
+    "emptyCheckDefaultMsg": ""
+  },
+  "mapping": {
+    "OPS01": {
+      "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS02": {
+      "BP01": ["rds.AutoMinorVersionUpgrade"],
+      "BP02": ["rds.DefaultParams"],
+      "BP03": ["ec2.SQLServerEOL"],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS03": {
+      "BP01": ["rds.EnhancedMonitor"],
+      "BP02": ["rds.MYSQL__PerfSchema"],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS04": {
+      "BP01": ["rds.MYSQL__LogsErrorEnable"],
+      "BP02": ["rds.PG__param_logTempFiles", "rds.PG__param_rdsAutoVacuumLevel", "rds.PG__param_autoVacDuration"],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS05": {
+      "BP01": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS06": {
+      "BP01": ["ec2.EC2SGNumber", "ec2.SGRuleNumber", "ec2.ELBSGNumber"],
+      "BP02": ["ec2.ELBClassicLB"],
+      "BP03": ["ec2.NACLAssociated"],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS07": {
+      "BP01": ["ec2.ASGELBHealthCheckValidation", "ec2.ASGELBHealthCheckEnabled"],
+      "BP02": ["ec2.ASGInstancesRemoved", "ec2.ASGTargetGroupELBExist"],
+      "BP03": ["ec2.ASGClassicLBExist", "ec2.ASGAMIExist"],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS08": {
+      "BP01": ["apigateway.IdleAPIGateway"],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS09": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS10": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
+    "OPS11": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    }
+  }
+}
