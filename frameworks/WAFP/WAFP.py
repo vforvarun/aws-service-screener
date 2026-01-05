@@ -34,7 +34,7 @@ class WAFP(Framework):
             self.WATools.listAnswers()
 
     def _hookPostItemActivity(self, title, section, checks, comp):
-        if self.WATools == None or self.WATools.HASPERMISSION == False:
+        if self.WATools == None or self.WATools.HASPERMISSION == False or not hasattr(self.WATools, 'answerSets'):
             return title, section, checks, comp
         
         titleNum = self.extractNumber(title)
