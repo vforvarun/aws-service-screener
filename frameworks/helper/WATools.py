@@ -222,12 +222,15 @@ class WATools():
                 resp = self.waClient.list_answers(**ansArgs)
                 isSuccess = True
                 break
-            except botocore.errorfactory.ResourceNotFoundException:
+            except (self.waClient.exceptions.ResourceNotFoundException, self.waClient.exceptions.ValidationException) as e:
                 # wait for 3 seconds before retrying
-                print("*** [WATools] ListAnswer failed, waiting workload to be generated, retry in 3 seconds")
+                print(f"*** [WATools] ListAnswer failed ({str(e)}), waiting workload to be generated, retry in 3 seconds")
                 if currAttempt >= maxRetry:
                     break
                 time.sleep(3)
+            except Exception as e:
+                print(f"*** [WATools] Unexpected error in ListAnswer: {str(e)}")
+                break
                 
         if isSuccess == False:
             print("*** [WATools] Unable to retrieve list of checklists, skipped WATool integration")
