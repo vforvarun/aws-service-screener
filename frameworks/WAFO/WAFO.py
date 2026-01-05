@@ -82,7 +82,7 @@ class WAFO(Framework):
         return match.group() if match else None
     
     def getDescription(self, titleNum, paired):
-        if self.WATools == None or self.WATools.HASPERMISSION == False:
+        if self.WATools == None or self.WATools.HASPERMISSION == False or not hasattr(self.WATools, 'answerSets'):
             return f"OPS{titleNum} - Best Practice {paired.split('::')[1] if '::' in paired else paired}"
         
         titleData = self.WATools.answerSets.get(titleNum, [None, None])
