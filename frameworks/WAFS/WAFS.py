@@ -84,8 +84,15 @@ class WAFS(Framework):
         return match.group() if match else None
     
     def getDescription(self, titleNum, paired):
-        titleStr = self.WATools.answerSets.get(titleNum, [None])[1]
-        sectStr = self.WATools.answerSets.get(paired, [None])[1]
+        if self.WATools == None or self.WATools.HASPERMISSION == False:
+            return f"SEC{titleNum} - Best Practice {paired.split('::')[1] if '::' in paired else paired}"
+        
+        titleData = self.WATools.answerSets.get(titleNum, [None, None])
+        pairedData = self.WATools.answerSets.get(paired, [None, None])
+        
+        titleStr = titleData[1] if len(titleData) > 1 and titleData[1] else f"SEC{titleNum}"
+        sectStr = pairedData[1] if len(pairedData) > 1 and pairedData[1] else f"BP{paired.split('::')[1] if '::' in paired else paired}"
+        
         return f"{titleStr} - {sectStr}"
 
     def _hookPostBuildContentDetail(self):
