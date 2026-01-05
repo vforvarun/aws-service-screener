@@ -90,6 +90,11 @@ class ArguParser:
             "required": False,
             "default": False,
             "help": "Run checks sequentially instead of parallel (fixes macOS hanging issues)"
+        },
+        'no_webserver': {
+            "required": False,
+            "default": False,
+            "help": "Disable automatic web server startup after report generation"
         }
     }
 

@@ -18,6 +18,7 @@ from utils.CfnTrail import CfnTrail
 from utils.CrossAccountsValidator import CrossAccountsValidator
 from utils.SuppressionsManager import SuppressionsManager
 from utils.Tools import _info, _warn
+from utils.WebServer import WebServerManager
 import constants as _C
 from utils.AwsRegionSelector import AwsRegionSelector
 from Screener import Screener
@@ -38,12 +39,14 @@ workerCounts = _cli_options['workerCounts']
 beta = _cli_options['beta']
 suppress_file = _cli_options['suppress_file']
 sequential = _cli_options['sequential']
+no_webserver = _cli_options['no_webserver']
 
 # print(crossAccounts)
 DEBUG = True if debugFlag in _C.CLI_TRUE_KEYWORD_ARRAY or debugFlag is True else False
 testmode = True if testmode in _C.CLI_TRUE_KEYWORD_ARRAY or testmode is True else False
 crossAccounts = True if crossAccounts in _C.CLI_TRUE_KEYWORD_ARRAY or crossAccounts is True else False
 beta = True if beta in _C.CLI_TRUE_KEYWORD_ARRAY or beta is True else False
+no_webserver = True if no_webserver in _C.CLI_TRUE_KEYWORD_ARRAY or no_webserver is True else False
 _cli_options['crossAccounts'] = crossAccounts
 
 # <TODO> analyse the impact profile switching
@@ -356,6 +359,29 @@ shutil.make_archive('output', 'zip', adminlteDir)
 print("Pages generated, download \033[1;42moutput.zip\033[0m to view")
 print("CloudShell user, you may use this path: \033[1;42m =====> \033[0m /tmp/service-screener-v2/output.zip \033[1;42m <===== \033[0m")
 
+# Start local web server for easy viewing (unless disabled)
+if not no_webserver:
+    print("\n" + "="*60)
+    print("🚀 Starting local web server for easy report viewing...")
+    print("="*60)
+
+    web_server = WebServerManager()
+    server_started = web_server.start_server(_C.ADMINLTE_DIR, auto_open=True)
+
+    if server_started:
+        server_info = web_server.get_server_info()
+        print(f"\n✅ Report is now available at: \033[1;42m http://localhost:{server_info['port']} \033[0m")
+        print("💡 The web server will keep running until you stop this script (Ctrl+C)")
+        print("💡 You can also download the output.zip file for offline viewing")
+        print("💡 To disable web server, use --no_webserver flag")
+    else:
+        print("❌ Could not start web server. Please use the output.zip file instead.")
+
+    print("="*60)
+else:
+    print("\n🌐 Web server disabled. Use output.zip file to view the report.")
+    print("💡 To enable web server, remove --no_webserver flag")
+
 scriptTimeSpent = round(time.time() - scriptStartTime, 3)
 print("@ Thank you for using {}, script spent {}s to complete @".format(Config.ADVISOR['TITLE'], scriptTimeSpent))
 
@@ -366,3 +392,16 @@ if beta:
     print("\033[96m  01/ Concurrent Mode on Evaluator (Attempt to improve performance) \033[0m")
     print("\033[96m  02/ API Buttons on each service html \033[0m")
     print("\033[93m[-- ..... --] THANK YOU FOR TESTING BETA FEATURES [-- ..... --] \033[0m")
+
+# Keep the web server running if it was started successfully
+if not no_webserver and 'web_server' in locals() and web_server.get_server_info()['running']:
+    print("\n🌐 Web server is running. Press Ctrl+C to stop and exit.")
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("\n\n🛑 Shutting down web server...")
+        web_server.stop_server()
+        print("👋 Goodbye!")
+else:
+    print("\n👋 Script completed. Use the output.zip file to view the report.")
