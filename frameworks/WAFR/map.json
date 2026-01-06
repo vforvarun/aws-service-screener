@@ -65,8 +65,8 @@
       "BP06": []
     },
     "REL08": {
-      "BP01": [],
-      "BP02": [],
+      "BP01": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
+      "BP02": ["rds.PerformanceInsightsEnabled"],
       "BP03": [],
       "BP04": [],
       "BP05": [],
@@ -89,9 +89,9 @@
       "BP06": []
     },
     "REL11": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
+      "BP01": ["rds.MultiAZ", "ec2.ELBCrossZone"],
+      "BP02": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"],
+      "BP03": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
       "BP04": [],
       "BP05": [],
       "BP06": []
