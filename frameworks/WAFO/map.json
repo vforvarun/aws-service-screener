@@ -10,80 +10,80 @@
   "mapping": {
     "OPS01": {
       "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
-      "BP02": ["iam.hasOrganization"],
-      "BP03": ["iam.EnableConfigService"],
-      "BP04": ["cloudtrail.NeedToEnableCloudTrail", "cloudtrail.HasOneMultiRegionTrail"],
-      "BP05": ["s3.BucketLogging", "ec2.VPCFlowLogEnabled"]
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "OPS02": {
       "BP01": ["rds.AutoMinorVersionUpgrade"],
       "BP02": ["rds.DefaultParams"],
       "BP03": ["ec2.SQLServerEOL"],
-      "BP04": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
-      "BP05": ["ec2.EC2NewGen", "ec2.EBSNewGen"]
+      "BP04": [],
+      "BP05": []
     },
     "OPS03": {
       "BP01": ["rds.EnhancedMonitor"],
       "BP02": ["rds.MYSQL__PerfSchema"],
-      "BP03": ["ec2.EC2DetailedMonitor", "ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
+      "BP03": ["ec2.EC2DetailedMonitor"],
       "BP04": ["rds.PerformanceInsightsEnabled"],
-      "BP05": ["sqs.QueueMonitoring"]
+      "BP05": []
     },
     "OPS04": {
       "BP01": ["rds.MYSQL__LogsErrorEnable"],
-      "BP02": ["rds.PG__param_logTempFiles", "rds.PG__param_rdsAutoVacuumLevel", "rds.PG__param_autoVacDuration"],
-      "BP03": ["rds.MYSQL__LogsGeneral"],
-      "BP04": ["opensearch.ApplicationLogs", "redshift.AuditLogging"],
-      "BP05": ["apigateway.ExecutionLogging", "cloudfront.accessLogging"]
+      "BP02": ["rds.PG__param_logTempFiles"],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "OPS05": {
       "BP01": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"],
       "BP02": ["rds.Backup", "rds.BackupTooLow"],
-      "BP03": ["iam.hasAWSBackupPlans"],
-      "BP04": ["ec2.EBSSnapshot", "ec2.EBSUpToDateSnapshot"],
-      "BP05": ["redshift.AutomaticSnapshots", "efs.AutomatedBackup"]
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "OPS06": {
-      "BP01": ["ec2.EC2SGNumber", "ec2.SGRuleNumber", "ec2.ELBSGNumber"],
+      "BP01": ["ec2.EC2SGNumber", "ec2.SGRuleNumber"],
       "BP02": ["ec2.ELBClassicLB"],
       "BP03": ["ec2.NACLAssociated"],
-      "BP04": ["ec2.SGSensitivePortOpenToAll", "ec2.SGAllTCPOpen", "ec2.SGAllUDPOpen"],
-      "BP05": ["ec2.SGDefaultInUsed"]
+      "BP04": [],
+      "BP05": []
     },
     "OPS07": {
-      "BP01": ["ec2.ASGELBHealthCheckValidation", "ec2.ASGELBHealthCheckEnabled"],
-      "BP02": ["ec2.ASGInstancesRemoved", "ec2.ASGTargetGroupELBExist"],
-      "BP03": ["ec2.ASGClassicLBExist", "ec2.ASGAMIExist"],
-      "BP04": ["ec2.ELBCrossZone", "ec2.ELBConnectionDraining"],
-      "BP05": ["rds.MultiAZ", "rds.Aurora__ClusterSize"]
+      "BP01": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
+      "BP02": ["ec2.ASGInstancesRemoved"],
+      "BP03": ["ec2.ASGClassicLBExist"],
+      "BP04": [],
+      "BP05": []
     },
     "OPS08": {
       "BP01": ["apigateway.IdleAPIGateway"],
-      "BP02": ["lambda.lambdaRoleReused"],
-      "BP03": ["sqs.DeadLetterQueue", "sqs.FifoConfiguration"],
-      "BP04": ["ec2.EC2Active", "rds.RdsIsIdle7days"],
-      "BP05": ["ec2.EC2EIPNotInUse", "ec2.EBSStoppedInstance"]
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "OPS09": {
-      "BP01": ["iam.enableGuardDuty"],
-      "BP02": ["iam.EnableConfigService"],
-      "BP03": ["cloudtrail.HasInsightSelectors"],
-      "BP04": ["s3.MacieToEnable"],
-      "BP05": ["ec2.ComputeOptimizerEnabled"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "OPS10": {
-      "BP01": ["rds.RightSizingCpuLowUsageDetected", "rds.RightSizingCpuLowUsageDetectedWithWeeklySpike"],
-      "BP02": ["ec2.EC2LowUtilization", "ec2.EC2SpikyUtilization"],
-      "BP03": ["rds.FreeMemoryLessThan10pct", "rds.FreeMemoryDropMT50pctIn24hours"],
-      "BP04": ["ec2.EBSLowUtilization", "ec2.EBSRightSizing"],
-      "BP05": ["rds.RightSizingMemoryMonthMinMT60pct", "rds.RightSizingCpuMonthMaxLT50pct"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "OPS11": {
-      "BP01": ["iam.mfaActive", "iam.rootMfaActive"],
-      "BP02": ["iam.passwordPolicy", "iam.passwordPolicyWeak"],
-      "BP03": ["iam.hasAccessKeyNoRotate30days", "iam.passwordLastChange90"],
-      "BP04": ["iam.userNoActivity90days", "iam.groupEmptyUsers"],
-      "BP05": ["iam.FullAdminAccess", "iam.InlinePolicyFullAdminAccess"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     }
   }
 }

@@ -13,35 +13,35 @@
       "BP02": ["rds.BurstableInstance"],
       "BP03": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
       "BP04": ["ec2.EC2AMD", "ec2.EC2Graviton"],
-      "BP05": ["rds.MSSQL__EEUnderSize", "rds.MSSQL__EditionOversize"]
+      "BP05": []
     },
     "PERF02": {
       "BP01": ["ec2.EC2DetailedMonitor", "ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
       "BP02": ["rds.PerformanceInsightsEnabled"],
       "BP03": ["rds.EnhancedMonitor"],
-      "BP04": ["sqs.QueueMonitoring"],
-      "BP05": ["ec2.EC2HighUtilization", "ec2.EBSHighUtilization"]
+      "BP04": [],
+      "BP05": []
     },
     "PERF03": {
       "BP01": ["ec2.EC2HighUtilization", "ec2.EBSHighUtilization"],
-      "BP02": ["rds.MYSQL__parammInnodbStatsPersistent", "rds.MYSQLA__paramAuroraLabMode"],
-      "BP03": ["rds.MYSQLA__paramQueryCacheType", "rds.MYSQL__paramQueryCacheType"],
-      "BP04": ["rds.MYSQL__LogsGeneral"],
-      "BP05": ["rds.FreeMemoryLessThan10pct", "rds.FreeMemoryDropMT50pctIn24hours"]
+      "BP02": ["rds.MYSQL__parammInnodbStatsPersistent"],
+      "BP03": ["rds.MYSQL__paramQueryCacheType"],
+      "BP04": [],
+      "BP05": []
     },
     "PERF04": {
-      "BP01": ["rds.PG__param_idleTransTimeout", "rds.PG__param_statementTimeout", "rds.PG__param_tempFileLimit"],
-      "BP02": ["rds.PG__param_logTempFiles", "rds.PG__param_rdsAutoVacuumLevel"],
-      "BP03": ["rds.PG__param_autoVacDuration"],
-      "BP04": ["rds.DefaultParams"],
-      "BP05": ["rds.AutoMinorVersionUpgrade"]
+      "BP01": ["rds.PG__param_idleTransTimeout", "rds.PG__param_statementTimeout"],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "PERF05": {
       "BP01": ["rds.FreeStorage20pct", "rds.EnableStorageAutoscaling"],
-      "BP02": ["rds.AuroraStorageTypeToUseIOOpt", "rds.AuroraStorageTypeToUseStnd"],
-      "BP03": ["ec2.EBSLowUtilization", "ec2.EBSRightSizing"],
-      "BP04": ["dynamodb.serviceLimitMaxTablePerRegion", "dynamodb.serviceLimitMaxGSIPerTable"],
-      "BP05": ["dynamodb.rcuServiceLimit", "dynamodb.wcuServiceLimit"]
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     }
   }
 }
