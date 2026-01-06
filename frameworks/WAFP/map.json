@@ -13,35 +13,35 @@
       "BP02": ["rds.BurstableInstance"],
       "BP03": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
       "BP04": ["ec2.EC2AMD", "ec2.EC2Graviton"],
-      "BP05": []
+      "BP05": ["ec2.ComputeOptimizerEnabled"]
     },
     "PERF02": {
       "BP01": ["ec2.EC2DetailedMonitor", "ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
       "BP02": ["rds.PerformanceInsightsEnabled"],
       "BP03": ["rds.EnhancedMonitor"],
-      "BP04": [],
-      "BP05": []
+      "BP04": ["ec2.EC2LowUtilization", "ec2.EC2HighUtilization"],
+      "BP05": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"]
     },
     "PERF03": {
       "BP01": ["ec2.EC2HighUtilization", "ec2.EBSHighUtilization"],
       "BP02": ["rds.MYSQL__parammInnodbStatsPersistent"],
       "BP03": ["rds.MYSQL__paramQueryCacheType"],
-      "BP04": [],
-      "BP05": []
+      "BP04": ["rds.FreeStorage20pct", "rds.EnableStorageAutoscaling"],
+      "BP05": ["rds.PerformanceInsightsEnabled", "rds.EnhancedMonitor"]
     },
     "PERF04": {
       "BP01": ["rds.PG__param_idleTransTimeout", "rds.PG__param_statementTimeout"],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP02": ["ec2.ELBCrossZone", "ec2.ELBConnectionDraining"],
+      "BP03": ["ec2.VPCFlowLogEnabled"],
+      "BP04": ["ec2.ELBCrossZone", "ec2.ASGELBHealthCheckEnabled"],
+      "BP05": ["ec2.NACLAssociated"]
     },
     "PERF05": {
       "BP01": ["rds.FreeStorage20pct", "rds.EnableStorageAutoscaling"],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP02": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
+      "BP03": ["rds.PerformanceInsightsEnabled"],
+      "BP04": ["ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
+      "BP05": ["ec2.ComputeOptimizerEnabled"]
     }
   }
 }

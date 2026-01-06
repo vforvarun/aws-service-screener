@@ -10,80 +10,80 @@
   "mapping": {
     "OPS01": {
       "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP02": ["iam.hasAlternateContact"],
+      "BP03": ["iam.EnableConfigService", "iam.SCPEnabled"],
+      "BP04": ["iam.EnableConfigService", "cloudtrail.NeedToEnableCloudTrail"],
+      "BP05": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"]
     },
     "OPS02": {
-      "BP01": ["rds.AutoMinorVersionUpgrade"],
+      "BP01": ["rds.AutoMinorVersionUpgrade", "ec2.EC2HasTag"],
       "BP02": ["rds.DefaultParams"],
-      "BP03": ["ec2.SQLServerEOL"],
-      "BP04": [],
-      "BP05": []
+      "BP03": ["ec2.SQLServerEOL", "ec2.WindowsOSOutdated"],
+      "BP04": ["iam.hasAlternateContact"],
+      "BP05": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"]
     },
     "OPS03": {
-      "BP01": ["rds.EnhancedMonitor"],
+      "BP01": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
       "BP02": ["rds.MYSQL__PerfSchema"],
-      "BP03": ["ec2.EC2DetailedMonitor"],
+      "BP03": ["ec2.EC2DetailedMonitor", "ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
       "BP04": ["rds.PerformanceInsightsEnabled"],
-      "BP05": []
+      "BP05": ["cloudtrail.NeedToEnableCloudTrail", "s3.BucketLogging"]
     },
     "OPS04": {
-      "BP01": ["rds.MYSQL__LogsErrorEnable"],
-      "BP02": ["rds.PG__param_logTempFiles"],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["rds.MYSQL__LogsErrorEnable", "cloudtrail.NeedToEnableCloudTrail"],
+      "BP02": ["rds.PG__param_logTempFiles", "s3.BucketLogging"],
+      "BP03": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
+      "BP04": ["rds.PerformanceInsightsEnabled"],
+      "BP05": ["iam.EnableConfigService"]
     },
     "OPS05": {
       "BP01": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"],
-      "BP02": ["rds.Backup", "rds.BackupTooLow"],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP02": ["rds.Backup", "rds.BackupTooLow", "iam.hasAWSBackupPlans"],
+      "BP03": ["rds.CrossRegionSnapshots", "ec2.EBSSnapshot"],
+      "BP04": ["rds.MultiAZ", "rds.Aurora__ClusterSize"],
+      "BP05": ["ec2.EBSUpToDateSnapshot"]
     },
     "OPS06": {
       "BP01": ["ec2.EC2SGNumber", "ec2.SGRuleNumber"],
       "BP02": ["ec2.ELBClassicLB"],
       "BP03": ["ec2.NACLAssociated"],
-      "BP04": [],
-      "BP05": []
+      "BP04": ["ec2.VPCFlowLogEnabled"],
+      "BP05": ["ec2.SGSensitivePortOpenToAll"]
     },
     "OPS07": {
       "BP01": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
       "BP02": ["ec2.ASGInstancesRemoved"],
       "BP03": ["ec2.ASGClassicLBExist"],
-      "BP04": [],
-      "BP05": []
+      "BP04": ["ec2.ASGELBHealthCheckEnabled"],
+      "BP05": ["ec2.ASGELBHealthCheckValidation"]
     },
     "OPS08": {
       "BP01": ["apigateway.IdleAPIGateway"],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP02": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
+      "BP03": ["rds.PerformanceInsightsEnabled"],
+      "BP04": ["iam.EnableConfigService"],
+      "BP05": ["cloudtrail.NeedToEnableCloudTrail"]
     },
     "OPS09": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["iam.EnableConfigService", "cloudtrail.NeedToEnableCloudTrail"],
+      "BP02": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
+      "BP03": ["iam.enableGuardDuty"],
+      "BP04": ["s3.BucketLogging"],
+      "BP05": ["rds.PerformanceInsightsEnabled"]
     },
     "OPS10": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["cloudtrail.NeedToEnableCloudTrail", "iam.EnableConfigService"],
+      "BP02": ["iam.enableGuardDuty"],
+      "BP03": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
+      "BP04": ["s3.BucketLogging"],
+      "BP05": ["rds.PerformanceInsightsEnabled"]
     },
     "OPS11": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["iam.EnableConfigService", "ec2.ComputeOptimizerEnabled"],
+      "BP02": ["cloudtrail.NeedToEnableCloudTrail", "s3.BucketLogging"],
+      "BP03": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
+      "BP04": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP05": ["iam.enableCURReport"]
     }
   }
 }

@@ -10,15 +10,15 @@
   "mapping": {
     "COST01": {
       "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
-      "BP02": [],
-      "BP03": ["ec2.ComputeOptimizerEnabled"],
-      "BP04": [],
-      "BP05": []
+      "BP02": ["iam.enableCostBudget"],
+      "BP03": ["ec2.ComputeOptimizerEnabled", "iam.enableCostBudget"],
+      "BP04": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP05": ["iam.enableCURReport"]
     },
     "COST02": {
-      "BP01": ["ec2.ComputeOptimizerEnabled"],
-      "BP02": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"],
-      "BP03": [],
+      "BP01": ["ec2.ComputeOptimizerEnabled", "iam.enableCostBudget"],
+      "BP02": ["ec2.CEReservedInstance", "ec2.CESavingsPlans", "iam.enableCostBudget"],
+      "BP03": ["iam.hasOrganization"],
       "BP04": ["rds.RightSizingMemoryMonthMinMT60pct", "rds.RightSizingCpuMonthMaxLT50pct"],
       "BP05": ["rds.RightSizingCpuLowUsageDetected"]
     },
@@ -26,57 +26,57 @@
       "BP01": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
       "BP02": ["ec2.EC2AMD", "ec2.EC2Graviton"],
       "BP03": ["rds.MSSQL__EEUnderSize", "rds.MSSQL__EditionOversize"],
-      "BP04": [],
-      "BP05": []
+      "BP04": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
+      "BP05": ["ec2.ComputeOptimizerEnabled"]
     },
     "COST04": {
-      "BP01": ["ec2.EC2LowUtilization", "ec2.EC2SpikyUtilization"],
-      "BP02": ["ec2.EBSLowUtilization", "ec2.EBSRightSizing"],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["ec2.EC2LowUtilization", "ec2.EC2SpikyUtilization", "ec2.EC2HasTag"],
+      "BP02": ["ec2.EBSLowUtilization", "ec2.EBSRightSizing", "ec2.EC2Active", "rds.RdsIsIdle7days"],
+      "BP03": ["ec2.EC2EIPNotInUse", "ec2.EBSStoppedInstance"],
+      "BP04": ["ec2.EBSSnapshotDeletedVolume"],
+      "BP05": ["apigateway.IdleAPIGateway"]
     },
     "COST05": {
       "BP01": ["ec2.EC2Active", "rds.RdsIsIdle7days"],
       "BP02": ["ec2.EC2EIPNotInUse", "ec2.EBSStoppedInstance"],
       "BP03": ["ec2.EBSSnapshotDeletedVolume"],
-      "BP04": [],
-      "BP05": []
+      "BP04": ["apigateway.IdleAPIGateway"],
+      "BP05": ["ec2.EC2LowUtilization", "rds.RightSizingCpuLowUsageDetected"]
     },
     "COST06": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["ec2.ComputeOptimizerEnabled", "rds.RightSizingMemoryMonthMinMT60pct"],
+      "BP02": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"],
+      "BP03": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
+      "BP04": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
+      "BP05": ["ec2.EC2AMD", "ec2.EC2Graviton"]
     },
     "COST07": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"],
+      "BP02": ["ec2.ComputeOptimizerEnabled"],
+      "BP03": ["rds.BurstableInstance"],
+      "BP04": ["ec2.EC2LowUtilization", "ec2.EC2SpikyUtilization"],
+      "BP05": ["rds.RightSizingCpuLowUsageDetected"]
     },
     "COST08": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["s3.ObjectsInIntelligentTier", "s3.BucketLifecycle"],
+      "BP02": ["s3.CrossRegionReplication"],
+      "BP03": ["ec2.ELBCrossZone"],
+      "BP04": ["s3.BucketReplication"],
+      "BP05": ["s3.ObjectsInIntelligentTier"]
     },
     "COST09": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["ec2.EC2LowUtilization", "ec2.EC2HighUtilization", "ec2.EC2SpikyUtilization"],
+      "BP02": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
+      "BP03": ["ec2.ComputeOptimizerEnabled"],
+      "BP04": ["rds.RightSizingMemoryMonthMinMT60pct", "rds.RightSizingCpuMonthMaxLT50pct"],
+      "BP05": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"]
     },
     "COST10": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["ec2.ComputeOptimizerEnabled", "iam.enableCURReport"],
+      "BP02": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
+      "BP03": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
+      "BP04": ["ec2.EC2AMD", "ec2.EC2Graviton"],
+      "BP05": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"]
     }
   }
 }

@@ -13,10 +13,10 @@
       "BP02": ["iam.rootMfaActive", "iam.hasAlternateContact", "iam.rootHasAccessKey", "iam.rootConsoleLogin30days"],
       "BP03": ["iam.SCPEnabled", "iam.EnableConfigService"],
       "BP04": ["iam.enableGuardDuty"],
-      "BP05": [],
-      "BP06": [],
+      "BP05": ["iam.supportPlanLowTier"],
+      "BP06": ["iam.enableCostBudget", "iam.enableCURReport"],
       "BP07": ["iam.hasOrganization"],
-      "BP08": []
+      "BP08": ["iam.hasAWSBackupPlans"]
     },
     "SEC02": {
       "BP01": ["iam.mfaActive", "iam.passwordPolicy", "iam.passwordPolicyWeak"],
@@ -30,11 +30,11 @@
       "BP01": ["iam.InlinePolicy"],
       "BP02": ["iam.FullAdminAccess", "iam.InlinePolicyFullAdminAccess", "iam.ManagedPolicyFullAccessOneServ"],
       "BP03": ["iam.EnableConfigService", "iam.SCPEnabled"],
-      "BP04": ["iam.groupEmptyUsers", "iam.userNoActivity90days"],
+      "BP04": ["iam.groupEmptyUsers", "iam.userNoActivity90days", "iam.unusedRole"],
       "BP05": ["cloudtrail.NeedToEnableCloudTrail"],
-      "BP06": ["s3.AccessControlList"],
-      "BP07": [],
-      "BP08": [],
+      "BP06": ["s3.AccessControlList", "s3.PublicReadAccessBlock", "s3.PublicWriteAccessBlock"],
+      "BP07": ["iam.roleLongSession"],
+      "BP08": ["iam.hasAccessKeyNoRotate30days"],
       "BP09": ["iam.EnableConfigService"]
     },
     "SEC04": {
@@ -44,55 +44,54 @@
       "BP04": ["iam.enableGuardDuty", "s3.MacieToEnable"]
     },
     "SEC05": {
-      "BP01": [],
-      "BP02": ["ec2.SGSensitivePortOpenToAll", "ec2.SGAllTCPOpen", "ec2.SGAllUDPOpen", "rds.PubliclyAccessible"],
+      "BP01": ["ec2.VPCFlowLogEnabled", "ec2.NACLAssociated"],
+      "BP02": ["ec2.SGSensitivePortOpenToAll", "ec2.SGAllTCPOpen", "ec2.SGAllUDPOpen", "rds.PubliclyAccessible", "ec2.EC2InstancePublicIP", "ec2.EC2SubnetAutoPublicIP"],
       "BP03": ["ec2.SGEncryptionInTransit"],
-      "BP04": []
+      "BP04": ["ec2.ELBWAFEnabled"]
     },
     "SEC06": {
       "BP01": ["iam.enableGuardDuty"],
-      "BP02": [],
-      "BP03": [],
+      "BP02": ["ec2.WindowsOSOutdated", "ec2.WindowsOSNotLatest", "ec2.SQLServerEOL"],
+      "BP03": ["ec2.EC2InstancePublicIP", "ec2.EC2InstanceAutoPublicIP"],
       "BP04": [],
-      "BP05": [],
-      "BP06": []
+      "BP05": ["iam.EnableConfigService", "ec2.EC2DetailedMonitor"]
     },
     "SEC07": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
+      "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP02": ["s3.ServerSideEncrypted", "s3.SSEWithKMS", "ec2.EBSEncrypted", "efs.EncryptedAtRest", "rds.StorageEncrypted"],
+      "BP03": ["s3.MacieToEnable"],
       "BP04": ["s3.MacieToEnable"]
     },
     "SEC08": {
-      "BP01": [],
+      "BP01": ["s3.ServerSideEncrypted", "ec2.EBSEncrypted", "efs.EncryptedAtRest", "rds.StorageEncrypted"],
       "BP02": ["s3.ServerSideEncrypted", "s3.SSEWithKMS", "ec2.EBSEncrypted", "efs.EncryptedAtRest", "rds.StorageEncrypted"],
-      "BP03": [],
-      "BP04": ["s3.BucketVersioning", "s3.ObjectLock"]
+      "BP03": ["s3.SSEWithKMS"],
+      "BP04": ["s3.BucketVersioning", "s3.ObjectLock", "rds.DeleteProtection", "rds.DeleteProtectionCluster"]
     },
     "SEC09": {
-      "BP01": [],
+      "BP01": ["s3.TlsEnforced", "ec2.SGEncryptionInTransit"],
       "BP02": ["ec2.SGEncryptionInTransit", "ec2.ELBListenerInsecure", "s3.TlsEnforced", "rds.MSSQLorPG__TransportEncrpytionDisabled"],
-      "BP03": [],
-      "BP04": []
+      "BP03": ["s3.SSEWithKMS", "ec2.EBSEncrypted"],
+      "BP04": ["rds.StorageEncrypted", "efs.EncryptedAtRest"]
     },
     "SEC10": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": [],
-      "BP06": [],
-      "BP07": []
+      "BP01": ["iam.hasAlternateContact"],
+      "BP02": ["cloudtrail.NeedToEnableCloudTrail", "cloudtrail.HasOneMultiRegionTrail"],
+      "BP03": ["iam.EnableConfigService"],
+      "BP04": ["rds.Backup", "rds.BackupTooLow", "ec2.EBSSnapshot", "ec2.EBSUpToDateSnapshot"],
+      "BP05": ["iam.enableGuardDuty"],
+      "BP06": ["iam.EnableConfigService"],
+      "BP07": ["iam.enableGuardDuty"]
     },
     "SEC11": {
       "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": [],
-      "BP06": [],
-      "BP07": [],
-      "BP08": []
+      "BP02": ["iam.passwordPolicy", "iam.passwordPolicyWeak"],
+      "BP03": ["iam.hasAccessKeyNoRotate30days", "rds.DBwithoutSecretManager"],
+      "BP04": ["s3.TlsEnforced", "ec2.SGEncryptionInTransit", "ec2.ELBListenerInsecure"],
+      "BP05": ["cloudtrail.NeedToEnableCloudTrail", "s3.BucketLogging"],
+      "BP06": ["iam.EnableConfigService"],
+      "BP07": ["iam.enableGuardDuty", "s3.MacieToEnable"],
+      "BP08": ["iam.EnableConfigService", "cloudtrail.NeedToEnableCloudTrail"]
     }
   }
 }
