@@ -15,7 +15,7 @@ class WAFC(Framework):
         self.isBeta = Config.get('beta', False)
 
         self.WATools = None
-        waTools = WATools('cost-optimization')
+        waTools = WATools('cost')
         cliParams = Config.get('_SS_PARAMS')
 
         tmpParams = {}

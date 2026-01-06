@@ -15,7 +15,7 @@ class WAFO(Framework):
         self.isBeta = Config.get('beta', False)
 
         self.WATools = None
-        waTools = WATools('operational-excellence')
+        waTools = WATools('operational')
         cliParams = Config.get('_SS_PARAMS')
 
         tmpParams = {}
