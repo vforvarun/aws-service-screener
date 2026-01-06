@@ -354,10 +354,91 @@ for acctId, cred in rolesCred.items():
     
 
 adminlteDir = _C.ADMINLTE_ROOT_DIR
+
+# Copy the standalone server script to the adminlte directory before zipping
+server_script_src = os.path.join(_C.ROOT_DIR, 'start_report_server.py')
+server_script_dest = os.path.join(adminlteDir, 'start_report_server.py')
+batch_script_src = os.path.join(_C.ROOT_DIR, 'start_report_server.bat')
+batch_script_dest = os.path.join(adminlteDir, 'start_report_server.bat')
+
+if os.path.exists(server_script_src):
+    shutil.copy2(server_script_src, server_script_dest)
+    print("📦 Added standalone report server to output package")
+
+if os.path.exists(batch_script_src):
+    shutil.copy2(batch_script_src, batch_script_dest)
+    print("📦 Added Windows batch file for easy server startup")
+
+# Create README for the standalone server
+readme_content = """# AWS Service Screener Report
+
+## Viewing the Report
+
+This package contains your AWS Service Screener report. You have multiple options to view it:
+
+### Option 1: Standalone Web Server (Recommended)
+
+**For Linux/Mac/CloudShell:**
+```bash
+python3 start_report_server.py
+```
+
+**For Windows:**
+- Double-click `start_report_server.bat`, OR
+- Open Command Prompt and run: `python start_report_server.py`
+
+This will:
+- Start a local web server (usually on port 8000)
+- Automatically open your browser to view the report
+- Handle all CORS and file access issues
+- Work on any system with Python 3.x installed
+
+### Option 2: Custom Port
+If port 8000 is already in use:
+```bash
+python3 start_report_server.py 8080
+```
+
+### Option 3: Direct File Access (Limited)
+If you have a local web server already running:
+- Open index.html directly in your browser
+- Note: Some features may not work due to CORS restrictions
+
+## Troubleshooting
+
+- **Port already in use**: Try a different port (see Option 2 above)
+- **Python not found**: Make sure Python 3.x is installed
+- **Permission denied**: Make sure you've extracted all files properly
+- **Windows users**: If double-clicking the .bat file doesn't work, try running from Command Prompt
+
+## Report Structure
+
+- `index.html` - Main report dashboard
+- Account folders (numbered) - Individual account reports
+- `start_report_server.py` - Cross-platform web server script
+- `start_report_server.bat` - Windows launcher (double-click to run)
+- `README.md` - This file
+
+## System Requirements
+
+- Python 3.x (most systems have this pre-installed)
+- Any modern web browser
+- No additional dependencies required
+
+For more information, visit: https://github.com/vforvarun/aws-service-screener
+"""
+
+readme_path = os.path.join(adminlteDir, 'README.md')
+with open(readme_path, 'w') as f:
+    f.write(readme_content)
+
 shutil.make_archive('output', 'zip', adminlteDir)
 
 print("Pages generated, download \033[1;42moutput.zip\033[0m to view")
-print("CloudShell user, you may use this path: \033[1;42m =====> \033[0m /tmp/service-screener-v2/output.zip \033[1;42m <===== \033[0m")
+print("CloudShell user, you may use this path: \033[1;42m =====> \033[0m /tmp/aws-service-screener/output.zip \033[1;42m <===== \033[0m")
+print("")
+print("📦 The output.zip includes a standalone web server script!")
+print("💡 After extracting: run 'python3 start_report_server.py' to view the report")
 
 # Start local web server for easy viewing (unless disabled)
 if not no_webserver:
