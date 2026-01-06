@@ -280,9 +280,12 @@ class WATools():
             _warn(f"[WATOOLS]: Skipping update for None questionId")
             return None
 
-        # Ensure selectedChoices is not empty
+        # Ensure selectedChoices is not empty and filter out None values
         if not selectedChoices:
             selectedChoices = []
+        else:
+            # Filter out None values to prevent API validation errors
+            selectedChoices = [choice for choice in selectedChoices if choice is not None]
 
         ansArgs = {
             'WorkloadId': self.waInfo['WorkloadId'],
