@@ -13,48 +13,51 @@
       "BP02": ["dynamodb.serviceLimitMaxTablePerRegion", "dynamodb.serviceLimitMaxGSIPerTable", "dynamodb.rcuServiceLimit", "dynamodb.wcuServiceLimit"],
       "BP03": [],
       "BP04": [],
-      "BP05": []
+      "BP05": [],
+      "BP06": []
     },
     "REL02": {
       "BP01": ["ec2.ELBCrossZone", "ec2.ELBConnectionDraining"],
-      "BP02": ["rds.Subnets3Az", "redshift.AZRelocation"],
+      "BP02": [],
       "BP03": ["rds.Subnets3Az"],
       "BP04": [],
       "BP05": []
     },
     "REL03": {
-      "BP01": ["rds.FreeStorage20pct", "rds.EnableStorageAutoscaling"],
-      "BP02": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
-      "BP03": ["rds.MultiAZ", "rds.Aurora__ClusterSize"],
-      "BP04": ["ec2.ELBCrossZone", "ec2.ELBConnectionDraining"],
-      "BP05": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "REL04": {
-      "BP01": ["rds.MYSQL__parammAutoCommit", "rds.MYSQL__param_syncBinLog", "rds.MYSQL__param_innodbFlushTrxCommit"],
+      "BP01": [],
       "BP02": [],
       "BP03": [],
       "BP04": [],
       "BP05": []
     },
     "REL05": {
-      "BP01": ["ec2.SGSensitivePortOpenToAll", "ec2.SGAllTCPOpen", "ec2.SGAllUDPOpen"],
-      "BP02": ["ec2.ELBListenerInsecure", "rds.PubliclyAccessible"],
-      "BP03": ["ec2.VPCFlowLogEnabled"],
-      "BP04": ["iam.enableGuardDuty"],
-      "BP05": ["ec2.NACLAssociated"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": [],
+      "BP07": []
     },
     "REL06": {
-      "BP01": ["rds.MYSQL__parammAutoCommit", "rds.MYSQL__param_syncBinLog", "rds.MYSQL__param_innodbFlushTrxCommit"],
-      "BP02": ["rds.PG__param_idleTransTimeout", "rds.PG__param_statementTimeout"],
-      "BP03": ["rds.DefaultParams"],
-      "BP04": ["rds.AutoMinorVersionUpgrade"],
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
       "BP05": []
     },
     "REL07": {
-      "BP01": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
-      "BP02": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
-      "BP03": ["rds.BurstableInstance"],
-      "BP04": ["ec2.EC2AMD", "ec2.EC2Graviton"],
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
       "BP05": []
     },
     "REL08": {
@@ -65,38 +68,38 @@
       "BP05": []
     },
     "REL09": {
-      "BP01": ["iam.hasAWSBackupPlans", "rds.Backup", "rds.BackupTooLow", "redshift.AutomaticSnapshots", "efs.AutomatedBackup"],
-      "BP02": [],
-      "BP03": ["ec2.EBSSnapshot", "ec2.EBSUpToDateSnapshot"],
-      "BP04": ["redshift.CrossRegionSnapshots"],
-      "BP05": []
-    },
-    "REL10": {
-      "BP01": ["rds.Backup", "rds.BackupTooLow", "redshift.AutomaticSnapshots"],
+      "BP01": ["rds.Backup", "rds.BackupTooLow", "redshift.AutomaticSnapshots", "efs.AutomatedBackup"],
       "BP02": ["ec2.EBSSnapshot", "ec2.EBSUpToDateSnapshot"],
-      "BP03": ["redshift.CrossRegionSnapshots", "efs.AutomatedBackup"],
+      "BP03": ["redshift.CrossRegionSnapshots"],
       "BP04": ["iam.hasAWSBackupPlans"],
       "BP05": []
     },
+    "REL10": {
+      "BP01": ["rds.MultiAZ", "rds.Aurora__ClusterSize"],
+      "BP02": ["ec2.ELBCrossZone"],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
+    },
     "REL11": {
-      "BP01": ["rds.MultiAZ", "ec2.ELBCrossZone"],
-      "BP02": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"],
-      "BP03": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
+      "BP01": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"],
+      "BP02": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
+      "BP03": [],
       "BP04": [],
       "BP05": []
     },
     "REL12": {
-      "BP01": ["rds.RdsIsIdle7days", "ec2.EC2Active"],
-      "BP02": ["ec2.EC2LowUtilization", "ec2.EC2SpikyUtilization"],
-      "BP03": ["rds.RightSizingCpuLowUsageDetected", "rds.RightSizingCpuLowUsageDetectedWithWeeklySpike"],
-      "BP04": ["ec2.EBSLowUtilization", "ec2.EBSRightSizing"],
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
       "BP05": []
     },
     "REL13": {
       "BP01": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
       "BP02": ["rds.PerformanceInsightsEnabled"],
       "BP03": ["ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
-      "BP04": ["rds.MYSQL__PerfSchema"],
+      "BP04": [],
       "BP05": []
     }
   }
