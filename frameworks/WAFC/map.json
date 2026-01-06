@@ -9,11 +9,11 @@
   },
   "mapping": {
     "COST01": {
-      "BP01": ["rds.DBInstanceWithoutTags"],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["rds.DBInstanceWithoutTags", "ec2.EC2HasTag"],
+      "BP02": ["iam.hasOrganization"],
+      "BP03": ["ec2.ComputeOptimizerEnabled"],
+      "BP04": ["rds.FreeMemoryLessThan10pct", "rds.FreeMemoryDropMT50pctIn24hours"],
+      "BP05": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"]
     },
     "COST02": {
       "BP01": ["ec2.ComputeOptimizerEnabled"],
@@ -44,38 +44,38 @@
       "BP05": []
     },
     "COST06": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
+      "BP01": ["s3.BucketLogging", "cloudtrail.NeedToEnableCloudTrail"],
+      "BP02": ["rds.RightSizingMemoryMonthMinMT60pct", "rds.RightSizingCpuMonthMaxLT50pct"],
+      "BP03": ["ec2.EC2HighUtilization", "ec2.EBSHighUtilization"],
+      "BP04": ["rds.PerformanceInsightsEnabled", "rds.EnhancedMonitor"],
       "BP05": []
     },
     "COST07": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
+      "BP01": ["rds.AutoMinorVersionUpgrade"],
+      "BP02": ["ec2.SQLServerEOL"],
+      "BP03": ["rds.MSSQL__EEUnderSize", "rds.MSSQL__EditionOversize", "rds.MSSQL__EE2017"],
+      "BP04": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
       "BP05": []
     },
     "COST08": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
+      "BP01": ["dynamodb.serviceLimitMaxTablePerRegion", "dynamodb.serviceLimitMaxGSIPerTable"],
+      "BP02": ["dynamodb.rcuServiceLimit", "dynamodb.wcuServiceLimit"],
+      "BP03": ["rds.FreeStorage20pct", "rds.EnableStorageAutoscaling"],
+      "BP04": ["ec2.EBSStoppedInstance", "ec2.EBSInUse"],
       "BP05": []
     },
     "COST09": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
+      "BP01": ["s3.BucketVersioning", "s3.ObjectLock"],
+      "BP02": ["ec2.EBSSnapshotDeletedVolume", "ec2.EBSFastSnapshot"],
+      "BP03": ["s3.PublicAccessBlock"],
+      "BP04": ["rds.AuroraStorageTypeToUseIOOpt", "rds.AuroraStorageTypeToUseStnd"],
       "BP05": []
     },
     "COST10": {
-      "BP01": [],
-      "BP02": [],
-      "BP03": [],
-      "BP04": [],
+      "BP01": ["ec2.EC2EIPNotInUse"],
+      "BP02": ["apigateway.IdleAPIGateway"],
+      "BP03": ["sqs.DeadLetterQueue", "sqs.FifoConfiguration"],
+      "BP04": ["lambda.lambdaRoleReused"],
       "BP05": []
     }
   }
