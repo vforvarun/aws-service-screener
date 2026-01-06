@@ -5,63 +5,70 @@
     "fullname": "AWS Well-Architected Framework - Operational Excellence Pillar",
     "description": "This framework focuses on the operational excellence pillar. The operational excellence pillar includes the ability to support development and run workloads effectively, gain insight into their operations, and to continuously improve supporting processes and procedures to deliver business value. This paper provides in-depth, best practice guidance for implementing operationally excellent workloads on AWS.",
     "_": "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html",
-    "emptyCheckDefaultMsg": ""
+    "emptyCheckDefaultMsg": "",
+    "correction_notes": "Systematically corrected using official AWS Well-Architected Framework MCP server data. Removed incorrect mappings and aligned checks with actual best practice descriptions. Focus on accuracy over completeness."
   },
   "mapping": {
     "OPS01": {
-      "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
-      "BP02": ["iam.hasAlternateContact"],
+      "BP01": [],
+      "BP02": [],
       "BP03": ["iam.EnableConfigService", "iam.SCPEnabled"],
       "BP04": ["iam.EnableConfigService", "cloudtrail.NeedToEnableCloudTrail"],
-      "BP05": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"]
+      "BP05": []
     },
     "OPS02": {
-      "BP01": ["rds.AutoMinorVersionUpgrade", "ec2.EC2HasTag"],
-      "BP02": ["rds.DefaultParams"],
-      "BP03": ["ec2.SQLServerEOL", "ec2.WindowsOSOutdated"],
+      "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP02": [],
+      "BP03": [],
       "BP04": ["iam.hasAlternateContact"],
-      "BP05": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"]
+      "BP05": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP06": []
     },
     "OPS03": {
-      "BP01": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
-      "BP02": ["rds.MYSQL__PerfSchema"],
-      "BP03": ["ec2.EC2DetailedMonitor", "ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
-      "BP04": ["rds.PerformanceInsightsEnabled"],
-      "BP05": ["cloudtrail.NeedToEnableCloudTrail", "s3.BucketLogging"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": [],
+      "BP07": []
     },
     "OPS04": {
-      "BP01": ["rds.MYSQL__LogsErrorEnable", "cloudtrail.NeedToEnableCloudTrail"],
-      "BP02": ["rds.PG__param_logTempFiles", "s3.BucketLogging"],
-      "BP03": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
-      "BP04": ["rds.PerformanceInsightsEnabled"],
-      "BP05": ["iam.EnableConfigService"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "OPS05": {
-      "BP01": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"],
-      "BP02": ["rds.Backup", "rds.BackupTooLow", "iam.hasAWSBackupPlans"],
-      "BP03": ["rds.CrossRegionSnapshots", "ec2.EBSSnapshot"],
-      "BP04": ["rds.MultiAZ", "rds.Aurora__ClusterSize"],
-      "BP05": ["ec2.EBSUpToDateSnapshot"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": [],
+      "BP07": [],
+      "BP08": [],
+      "BP09": [],
+      "BP10": []
     },
     "OPS06": {
-      "BP01": ["ec2.EC2SGNumber", "ec2.SGRuleNumber"],
-      "BP02": ["ec2.ELBClassicLB"],
-      "BP03": ["ec2.NACLAssociated"],
-      "BP04": ["ec2.VPCFlowLogEnabled"],
-      "BP05": ["ec2.SGSensitivePortOpenToAll"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": []
     },
     "OPS07": {
-      "BP01": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
-      "BP02": ["ec2.ASGInstancesRemoved"],
-      "BP03": ["ec2.ASGClassicLBExist"],
-      "BP04": ["ec2.ASGELBHealthCheckEnabled"],
-      "BP05": ["ec2.ASGELBHealthCheckValidation"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": []
     },
     "OPS08": {
-      "BP01": ["apigateway.IdleAPIGateway"],
+      "BP01": [],
       "BP02": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
       "BP03": ["rds.PerformanceInsightsEnabled"],
-      "BP04": ["iam.EnableConfigService"],
+      "BP04": [],
       "BP05": ["cloudtrail.NeedToEnableCloudTrail"]
     },
     "OPS09": {
@@ -73,17 +80,20 @@
     },
     "OPS10": {
       "BP01": ["cloudtrail.NeedToEnableCloudTrail", "iam.EnableConfigService"],
-      "BP02": ["iam.enableGuardDuty"],
-      "BP03": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
-      "BP04": ["s3.BucketLogging"],
-      "BP05": ["rds.PerformanceInsightsEnabled"]
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "OPS11": {
       "BP01": ["iam.EnableConfigService", "ec2.ComputeOptimizerEnabled"],
-      "BP02": ["cloudtrail.NeedToEnableCloudTrail", "s3.BucketLogging"],
-      "BP03": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
+      "BP02": [],
+      "BP03": [],
       "BP04": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
-      "BP05": ["iam.enableCURReport"]
+      "BP05": [],
+      "BP06": [],
+      "BP07": [],
+      "BP08": []
     }
   }
 }

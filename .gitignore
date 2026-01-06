@@ -13,6 +13,10 @@ suppressions.json
 pyvenv.cfg
 mcp.json
 
+# Temporary framework mapping files (working files, not for git)
+frameworks_WAF*_map_*.json
+mcp_config_*.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -5,64 +5,63 @@
     "fullname": "AWS Well-Architected Framework - Reliability Pillar",
     "description": "This framework focuses on the reliability pillar. The reliability pillar encompasses the ability of a workload to perform its intended function correctly and consistently when it's expected to. This includes the ability to operate and test the workload through its total lifecycle. This paper provides in-depth, best practice guidance for implementing reliable workloads on AWS.",
     "_": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html",
-    "emptyCheckDefaultMsg": ""
+    "emptyCheckDefaultMsg": "",
+    "correction_notes": "Systematically corrected using official AWS Well-Architected Framework MCP server data. Removed incorrect mappings and aligned checks with actual best practice descriptions. Focus on accuracy over completeness."
   },
   "mapping": {
     "REL01": {
       "BP01": ["dynamodb.serviceLimitMaxTablePerRegion", "dynamodb.serviceLimitMaxGSIPerTable", "dynamodb.rcuServiceLimit", "dynamodb.wcuServiceLimit"],
       "BP02": ["dynamodb.serviceLimitMaxTablePerRegion", "dynamodb.serviceLimitMaxGSIPerTable", "dynamodb.rcuServiceLimit", "dynamodb.wcuServiceLimit"],
-      "BP03": ["iam.EnableConfigService"],
-      "BP04": ["ec2.ComputeOptimizerEnabled"],
-      "BP05": ["iam.EnableConfigService"],
-      "BP06": ["iam.EnableConfigService"]
+      "BP03": [],
+      "BP04": ["dynamodb.serviceLimitMaxTablePerRegion", "dynamodb.serviceLimitMaxGSIPerTable", "dynamodb.rcuServiceLimit", "dynamodb.wcuServiceLimit"],
+      "BP05": [],
+      "BP06": []
     },
     "REL02": {
       "BP01": ["ec2.ELBCrossZone", "ec2.ELBConnectionDraining"],
-      "BP02": ["ec2.VPCFlowLogEnabled"],
+      "BP02": [],
       "BP03": ["rds.Subnets3Az"],
-      "BP04": ["ec2.NACLAssociated"],
-      "BP05": ["ec2.ELBWAFEnabled"]
+      "BP04": [],
+      "BP05": []
     },
     "REL03": {
-      "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
-      "BP02": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
-      "BP03": ["apigateway.IdleAPIGateway"],
-      "BP04": ["ec2.ASGELBHealthCheckEnabled"],
-      "BP05": ["ec2.ASGELBHealthCheckValidation"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": []
     },
     "REL04": {
-      "BP01": ["apigateway.IdleAPIGateway"],
-      "BP02": ["ec2.ELBCrossZone", "ec2.ASGELBHealthCheckEnabled"],
-      "BP03": ["apigateway.IdleAPIGateway"],
-      "BP04": ["ec2.ASGELBHealthCheckValidation"],
-      "BP05": ["ec2.ASGELBHealthCheckValidation"]
+      "BP01": [],
+      "BP02": ["ec2.ELBCrossZone"],
+      "BP03": [],
+      "BP04": []
     },
     "REL05": {
-      "BP01": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
-      "BP02": ["apigateway.IdleAPIGateway"],
-      "BP03": ["ec2.ASGELBHealthCheckValidation"],
-      "BP04": ["ec2.ASGELBHealthCheckValidation"],
-      "BP05": ["ec2.ASGELBHealthCheckValidation"],
-      "BP06": ["ec2.ASGELBHealthCheckValidation"],
-      "BP07": ["ec2.ASGELBHealthCheckValidation"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": [],
+      "BP06": [],
+      "BP07": []
     },
     "REL06": {
       "BP01": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor", "cloudtrail.NeedToEnableCloudTrail"],
       "BP02": ["ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor", "rds.PerformanceInsightsEnabled"],
-      "BP03": ["iam.EnableConfigService"],
-      "BP04": ["cloudtrail.NeedToEnableCloudTrail", "s3.BucketLogging"],
-      "BP05": ["iam.enableGuardDuty"]
+      "BP03": [],
+      "BP04": [],
+      "BP05": ["cloudtrail.NeedToEnableCloudTrail", "s3.BucketLogging"],
+      "BP06": [],
+      "BP07": []
     },
     "REL07": {
       "BP01": ["ec2.ASGELBHealthCheckEnabled", "ec2.ComputeOptimizerEnabled"],
-      "BP02": ["ec2.ASGELBHealthCheckValidation"],
-      "BP03": ["ec2.ASGInstancesRemoved"],
-      "BP04": ["ec2.ASGClassicLBExist"],
-      "BP05": ["ec2.ASGELBHealthCheckEnabled"]
+      "BP02": [],
+      "BP03": [],
+      "BP04": []
     },
     "REL08": {
-      "BP01": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
-      "BP02": ["rds.PerformanceInsightsEnabled"],
+      "BP01": [],
+      "BP02": [],
       "BP03": [],
       "BP04": [],
       "BP05": []
@@ -71,34 +70,33 @@
       "BP01": ["rds.Backup", "rds.BackupTooLow", "redshift.AutomaticSnapshots", "efs.AutomatedBackup"],
       "BP02": ["ec2.EBSSnapshot", "ec2.EBSUpToDateSnapshot"],
       "BP03": ["redshift.CrossRegionSnapshots"],
-      "BP04": ["iam.hasAWSBackupPlans"],
-      "BP05": []
+      "BP04": ["iam.hasAWSBackupPlans"]
     },
     "REL10": {
-      "BP01": ["rds.MultiAZ", "rds.Aurora__ClusterSize"],
-      "BP02": ["ec2.ELBCrossZone"],
-      "BP03": [],
-      "BP04": [],
-      "BP05": []
+      "BP01": ["rds.MultiAZ", "rds.Aurora__ClusterSize", "ec2.ELBCrossZone"],
+      "BP02": [],
+      "BP03": []
     },
     "REL11": {
-      "BP01": ["rds.DeleteProtection", "rds.DeleteProtectionCluster"],
+      "BP01": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
       "BP02": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
-      "BP03": [],
+      "BP03": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
+      "BP04": [],
+      "BP05": [],
+      "BP06": [],
+      "BP07": []
+    },
+    "REL12": {
+      "BP01": [],
+      "BP02": [],
+      "BP03": ["ec2.EC2LowUtilization", "ec2.EC2HighUtilization"],
       "BP04": [],
       "BP05": []
     },
-    "REL12": {
-      "BP01": ["cloudtrail.NeedToEnableCloudTrail", "s3.BucketLogging"],
-      "BP02": ["iam.EnableConfigService"],
-      "BP03": ["ec2.EC2LowUtilization", "ec2.EC2HighUtilization"],
-      "BP04": ["rds.PerformanceInsightsEnabled", "ec2.EC2DetailedMonitor"],
-      "BP05": ["iam.EnableConfigService"]
-    },
     "REL13": {
-      "BP01": ["rds.EnhancedMonitor", "ec2.EC2DetailedMonitor"],
-      "BP02": ["rds.PerformanceInsightsEnabled"],
-      "BP03": ["ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
+      "BP01": [],
+      "BP02": ["rds.Backup", "rds.BackupTooLow", "ec2.EBSSnapshot"],
+      "BP03": [],
       "BP04": [],
       "BP05": []
     }

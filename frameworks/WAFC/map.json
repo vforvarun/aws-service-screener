@@ -5,78 +5,77 @@
     "fullname": "AWS Well-Architected Framework - Cost Optimization Pillar",
     "description": "This framework focuses on the cost optimization pillar. The cost optimization pillar includes the ability to run systems to deliver business value at the lowest price point. This paper provides in-depth, best practice guidance for implementing cost-optimized workloads on AWS.",
     "_": "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html",
-    "emptyCheckDefaultMsg": ""
+    "emptyCheckDefaultMsg": "",
+    "correction_notes": "Systematically corrected using official AWS Well-Architected Framework MCP server data. Removed incorrect mappings and aligned checks with actual best practice descriptions. Focus on accuracy over completeness."
   },
   "mapping": {
     "COST01": {
-      "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP01": [],
       "BP02": ["iam.enableCostBudget"],
-      "BP03": ["ec2.ComputeOptimizerEnabled", "iam.enableCostBudget"],
+      "BP03": ["iam.enableCostBudget"],
       "BP04": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
       "BP05": ["iam.enableCURReport"]
     },
     "COST02": {
-      "BP01": ["ec2.ComputeOptimizerEnabled", "iam.enableCostBudget"],
-      "BP02": ["ec2.CEReservedInstance", "ec2.CESavingsPlans", "iam.enableCostBudget"],
+      "BP01": [],
+      "BP02": ["iam.enableCostBudget"],
       "BP03": ["iam.hasOrganization"],
-      "BP04": ["rds.RightSizingMemoryMonthMinMT60pct", "rds.RightSizingCpuMonthMaxLT50pct"],
-      "BP05": ["rds.RightSizingCpuLowUsageDetected"]
+      "BP04": [],
+      "BP05": []
     },
     "COST03": {
-      "BP01": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
-      "BP02": ["ec2.EC2AMD", "ec2.EC2Graviton"],
-      "BP03": ["rds.MSSQL__EEUnderSize", "rds.MSSQL__EditionOversize"],
-      "BP04": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
-      "BP05": ["ec2.ComputeOptimizerEnabled"]
+      "BP01": ["iam.enableCURReport"],
+      "BP02": [],
+      "BP03": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP04": [],
+      "BP05": ["iam.enableCostBudget", "iam.enableCURReport"]
     },
     "COST04": {
-      "BP01": ["ec2.EC2LowUtilization", "ec2.EC2SpikyUtilization", "ec2.EC2HasTag"],
-      "BP02": ["ec2.EBSLowUtilization", "ec2.EBSRightSizing", "ec2.EC2Active", "rds.RdsIsIdle7days"],
-      "BP03": ["ec2.EC2EIPNotInUse", "ec2.EBSStoppedInstance"],
-      "BP04": ["ec2.EBSSnapshotDeletedVolume"],
-      "BP05": ["apigateway.IdleAPIGateway"]
+      "BP01": ["ec2.EC2HasTag", "rds.DBInstanceWithoutTags"],
+      "BP02": ["ec2.EC2LowUtilization", "ec2.EBSLowUtilization", "ec2.EC2Active", "rds.RdsIsIdle7days", "ec2.EC2EIPNotInUse", "ec2.EBSStoppedInstance", "apigateway.IdleAPIGateway"],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "COST05": {
-      "BP01": ["ec2.EC2Active", "rds.RdsIsIdle7days"],
-      "BP02": ["ec2.EC2EIPNotInUse", "ec2.EBSStoppedInstance"],
-      "BP03": ["ec2.EBSSnapshotDeletedVolume"],
-      "BP04": ["apigateway.IdleAPIGateway"],
-      "BP05": ["ec2.EC2LowUtilization", "rds.RightSizingCpuLowUsageDetected"]
+      "BP01": [],
+      "BP02": [],
+      "BP03": []
     },
     "COST06": {
-      "BP01": ["ec2.ComputeOptimizerEnabled", "rds.RightSizingMemoryMonthMinMT60pct"],
-      "BP02": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"],
-      "BP03": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
-      "BP04": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
-      "BP05": ["ec2.EC2AMD", "ec2.EC2Graviton"]
+      "BP01": ["ec2.ComputeOptimizerEnabled"],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "COST07": {
       "BP01": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"],
-      "BP02": ["ec2.ComputeOptimizerEnabled"],
-      "BP03": ["rds.BurstableInstance"],
-      "BP04": ["ec2.EC2LowUtilization", "ec2.EC2SpikyUtilization"],
-      "BP05": ["rds.RightSizingCpuLowUsageDetected"]
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "COST08": {
-      "BP01": ["s3.ObjectsInIntelligentTier", "s3.BucketLifecycle"],
+      "BP01": [],
       "BP02": ["s3.CrossRegionReplication"],
       "BP03": ["ec2.ELBCrossZone"],
       "BP04": ["s3.BucketReplication"],
-      "BP05": ["s3.ObjectsInIntelligentTier"]
+      "BP05": []
     },
     "COST09": {
       "BP01": ["ec2.EC2LowUtilization", "ec2.EC2HighUtilization", "ec2.EC2SpikyUtilization"],
       "BP02": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"],
-      "BP03": ["ec2.ComputeOptimizerEnabled"],
-      "BP04": ["rds.RightSizingMemoryMonthMinMT60pct", "rds.RightSizingCpuMonthMaxLT50pct"],
-      "BP05": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"]
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     },
     "COST10": {
       "BP01": ["ec2.ComputeOptimizerEnabled", "iam.enableCURReport"],
-      "BP02": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
-      "BP03": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
-      "BP04": ["ec2.EC2AMD", "ec2.EC2Graviton"],
-      "BP05": ["ec2.CEReservedInstance", "ec2.CESavingsPlans"]
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
+      "BP05": []
     }
   }
 }

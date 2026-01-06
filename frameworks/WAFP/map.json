@@ -5,39 +5,40 @@
     "fullname": "AWS Well-Architected Framework - Performance Efficiency Pillar",
     "description": "This framework focuses on the performance efficiency pillar. The performance efficiency pillar includes the ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve. This paper provides in-depth, best practice guidance for implementing performant workloads on AWS.",
     "_": "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/welcome.html",
-    "emptyCheckDefaultMsg": ""
+    "emptyCheckDefaultMsg": "",
+    "correction_notes": "Systematically corrected using official AWS Well-Architected Framework MCP server data. Removed incorrect mappings and aligned checks with actual best practice descriptions. Focus on accuracy over completeness."
   },
   "mapping": {
     "PERF01": {
-      "BP01": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
-      "BP02": ["rds.BurstableInstance"],
-      "BP03": ["ec2.EC2NewGen", "ec2.EBSNewGen"],
-      "BP04": ["ec2.EC2AMD", "ec2.EC2Graviton"],
+      "BP01": [],
+      "BP02": [],
+      "BP03": [],
+      "BP04": [],
       "BP05": ["ec2.ComputeOptimizerEnabled"]
     },
     "PERF02": {
-      "BP01": ["ec2.EC2DetailedMonitor", "ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
-      "BP02": ["rds.PerformanceInsightsEnabled"],
-      "BP03": ["rds.EnhancedMonitor"],
-      "BP04": ["ec2.EC2LowUtilization", "ec2.EC2HighUtilization"],
+      "BP01": ["rds.LatestInstanceGeneration", "ec2.LatestInstanceGeneration"],
+      "BP02": [],
+      "BP03": ["ec2.EC2DetailedMonitor", "ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
+      "BP04": [],
       "BP05": ["ec2.ASGELBHealthCheckEnabled", "ec2.ASGELBHealthCheckValidation"]
     },
     "PERF03": {
-      "BP01": ["ec2.EC2HighUtilization", "ec2.EBSHighUtilization"],
-      "BP02": ["rds.MYSQL__parammInnodbStatsPersistent"],
-      "BP03": ["rds.MYSQL__paramQueryCacheType"],
+      "BP01": [],
+      "BP02": [],
+      "BP03": ["rds.PerformanceInsightsEnabled", "rds.EnhancedMonitor"],
       "BP04": ["rds.FreeStorage20pct", "rds.EnableStorageAutoscaling"],
-      "BP05": ["rds.PerformanceInsightsEnabled", "rds.EnhancedMonitor"]
+      "BP05": []
     },
     "PERF04": {
-      "BP01": ["rds.PG__param_idleTransTimeout", "rds.PG__param_statementTimeout"],
+      "BP01": [],
       "BP02": ["ec2.ELBCrossZone", "ec2.ELBConnectionDraining"],
-      "BP03": ["ec2.VPCFlowLogEnabled"],
+      "BP03": [],
       "BP04": ["ec2.ELBCrossZone", "ec2.ASGELBHealthCheckEnabled"],
-      "BP05": ["ec2.NACLAssociated"]
+      "BP05": []
     },
     "PERF05": {
-      "BP01": ["rds.FreeStorage20pct", "rds.EnableStorageAutoscaling"],
+      "BP01": [],
       "BP02": ["ec2.EC2DetailedMonitor", "rds.EnhancedMonitor"],
       "BP03": ["rds.PerformanceInsightsEnabled"],
       "BP04": ["ec2.EC2MemoryMonitor", "ec2.EC2DiskMonitor"],
