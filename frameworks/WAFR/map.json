@@ -9,10 +9,10 @@
   },
   "mapping": {
     "REL01": {
-      "BP01": ["iam.hasAWSBackupPlans"],
-      "BP02": ["rds.Backup", "rds.BackupTooLow", "redshift.AutomaticSnapshots", "efs.AutomatedBackup"],
-      "BP03": ["ec2.EBSSnapshot", "ec2.EBSUpToDateSnapshot"],
-      "BP04": ["redshift.CrossRegionSnapshots"],
+      "BP01": [],
+      "BP02": ["dynamodb.serviceLimitMaxTablePerRegion", "dynamodb.serviceLimitMaxGSIPerTable", "dynamodb.rcuServiceLimit", "dynamodb.wcuServiceLimit"],
+      "BP03": [],
+      "BP04": [],
       "BP05": [],
       "BP06": []
     },
@@ -73,10 +73,10 @@
       "BP06": []
     },
     "REL09": {
-      "BP01": [],
+      "BP01": ["iam.hasAWSBackupPlans", "rds.Backup", "rds.BackupTooLow", "redshift.AutomaticSnapshots", "efs.AutomatedBackup"],
       "BP02": [],
-      "BP03": [],
-      "BP04": [],
+      "BP03": ["ec2.EBSSnapshot", "ec2.EBSUpToDateSnapshot"],
+      "BP04": ["redshift.CrossRegionSnapshots"],
       "BP05": [],
       "BP06": []
     },
