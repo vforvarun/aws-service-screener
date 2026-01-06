@@ -99,6 +99,13 @@ if crossAccounts == True:
 else:
     rolesCred = {'default': {}}
 
+## Ensure adminlte directory structure exists
+if not os.path.exists(_C.ADMINLTE_ROOT_DIR):
+    os.makedirs(_C.ADMINLTE_ROOT_DIR)
+
+if not os.path.exists(_C.ADMINLTE_DIR):
+    os.makedirs(_C.ADMINLTE_DIR)
+
 ## Cleanup existing static resources if any
 for file in os.listdir(_C.ADMINLTE_DIR):
     if file.isnumeric() == True:
